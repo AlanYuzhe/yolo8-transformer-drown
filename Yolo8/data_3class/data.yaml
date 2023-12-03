@@ -1,0 +1,13 @@
+train: /project/ece601/ec601_lifeguard/Yolo8/data_3class/train/images
+val: /project/ece601/ec601_lifeguard/Yolo8/data_3class/valid/images
+test: /project/ece601/ec601_lifeguard/Yolo8/data_3class/test/images
+
+nc: 3
+names: ['drowning', 'out of water', 'swimming']
+
+roboflow:
+  workspace: team-burraq
+  project: drowning-detection-3-classes
+  version: 1
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/team-burraq/drowning-detection-3-classes/dataset/1

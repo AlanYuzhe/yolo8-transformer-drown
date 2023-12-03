@@ -1,0 +1,13 @@
+train: /project/ece601/ec601_lifeguard/Yolo8/data_max/train/images
+val: /project/ece601/ec601_lifeguard/Yolo8/data_max/valid/images
+test: /project/ece601/ec601_lifeguard/Yolo8/data_max/test/images
+
+nc: 2
+names: ['drowning', 'swimming']
+
+roboflow:
+  workspace: pwnface4-gmail-com
+  project: drowning-people
+  version: 6
+  license: CC BY 4.0
+  url: https://universe.roboflow.com/pwnface4-gmail-com/drowning-people/dataset/6
