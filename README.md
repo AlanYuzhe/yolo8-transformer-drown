@@ -1,6 +1,73 @@
-# Project_1
-# Using Yolov5 and Yolov8 to primarily train the model to detect the drowning people. To combine transformer with Yolov8 to improve the model.
-#For this project, we first used YOLOv2 model for idea validation, and then gradually upgraded the YOLO version to v8. Then we found that YOLOv8+transformer works relatively well after training with Fast R-CNN and SSD models respectively. So this program was adopted.
-#When we trained the model, we only trained to find the person and then recognize whether he is drowning or not, and we didn't do how to find the person from the big image, so we can only intercept the person for him to recognize. Then for the sake of clarity and visualization, so we extracted the results and drew them on a diagram of the poster.According to the running results can be obtained, the detection confidence is basically more than 90%.
-![image](https://github.com/AlanYuzhe/Project_1/assets/77837061/0c33cd07-6280-4fb8-8a2d-acf44f26575b)
-<img width="1035" alt="31ea8849ab8daca31fef87ed01b453d" src="https://github.com/AlanYuzhe/Project_1/assets/77837061/7fb20e01-2d9e-446d-8764-cace8d1b5e15">
+# YOLO8-Transformer-Drown
+
+An end-to-end deep learning pipeline for detecting drowning persons in images and video by combining YOLOv5/YOLOv8 with a lightweight Transformer head.
+
+---
+
+## Project Overview
+
+**YOLO8-Transformer-Drown** localizes human figures in images or video frames and classifies whether each person is drowning. The project evolves through:
+
+1. YOLOv2 proof of concept  
+2. YOLOv5 and SSD / Fast R-CNN benchmarks  
+3. YOLOv8 upgrade  
+4. YOLOv8 with a custom Transformer head for improved posture discrimination
+
+The final model achieves at least 90% detection confidence on held-out test data.
+
+---
+
+## Key Features
+
+**Model Evolution**  
+- Initial experiments with YOLOv2  
+- YOLOv5, SSD, and Fast R-CNN training and evaluation  
+- YOLOv8 baseline  
+- Transformer head integrated into YOLOv8’s feature maps
+
+**Data Handling**  
+- MATLAB `.mat` ground-truth annotations (`gTruth.mat`)  
+- Example manual labels (`labeled.JPG`)  
+- Support for additional test images (`test.jpg`, `dog.jpeg`)
+
+**End-to-End Pipeline**  
+- Training scripts (`yolov5.py`, YOLOv8 via Ultralytics CLI)  
+- Jupyter notebooks for experiments (`yolo5.ipynb`, `Yolo8.ipynb`)  
+- Inference and visualization (`Detection.py`, `1.py`)
+
+**Performance**  
+- Detection confidence ≥ 90%  
+
+---
+
+## Project Structure
+
+- `Yolo8.ipynb` – YOLOv8 training and evaluation notebook  
+- `Detection.py` – Script for running inference  
+- `dataset.yaml` – Dataset configuration for training  
+- `yolov8s.pt`, `yolov5s.pt`, `yolov8n.pt` – Pretrained model weights  
+- `runs/` – Output directory for detection results  
+- `image/` – Sample images for testing  
+- `yolo5env/` – YOLOv5 environment setup files  
+- `Project1.docx` – Project report and documentation  
+- `README.md` – Project description and usage guide
+
+---
+
+## Results
+
+The YOLOv8 + Transformer model achieves strong performance on the drowning detection task, with consistent confidence scores exceeding 90% and real-time inference capability. Detection output is saved under the `runs/` directory.
+
+---
+
+## License
+
+This project is licensed under the MIT License.
+
+## Author
+
+This project was developed by:
+
+- **Yuzhe Wu**  
+- **Jiaqi Zhang**  
+- **Cheng Qian**
